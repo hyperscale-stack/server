@@ -8,19 +8,19 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-// Router struct
+// Router struct.
 type Router struct {
 	*fiber.App
 }
 
-// New constructor
+// New constructor.
 func New(config ...fiber.Config) *Router {
 	return &Router{
 		App: fiber.New(config...),
 	}
 }
 
-// AddController to Router
+// AddController to Router.
 func (r *Router) AddController(controller Controller) {
 	controller.Mount(r)
 }
